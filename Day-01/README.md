@@ -63,13 +63,13 @@ Terraform uses HCL (`.tf` files) that are human- and machine-readable. You can r
 
 ```mermaid
 flowchart LR
-    Dev[DevOps Team] --> Code[Write .tf in HCL]
-    Code --> Git[Push to VCS]
-    Git --> CI[CI/CD: lint/plan/apply]
-    CI --> AWS[AWS APIs]
-    AWS --> State[State File (.tfstate)]
+    Dev["DevOps Team"] --> Code["Write .tf in HCL"]
+    Code --> Git["Push to VCS"]
+    Git --> CI["CI/CD: lint/plan/apply"]
+    CI --> AWS["AWS APIs"]
+    AWS --> State["State File (.tfstate)"]
     State --> CI
-    CI --> Report[Plan & Apply Results]
+    CI --> Report["Plan & Apply Results"]
 ```
 
 Core commands you'll run (locally or in pipelines):
