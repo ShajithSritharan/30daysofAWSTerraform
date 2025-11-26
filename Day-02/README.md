@@ -98,4 +98,6 @@ Plan: 1 to add, 0 to change, 0 to destroy.
 
 You now have the basics of providers, version pinning, and the provider block. Next up: building more resources with confidence.
 
+## Watch: Terraform Providers
+
 [![Watch the video](https://img.youtube.com/vi/JFiMmaktnuM/2.jpg)](http://www.youtube.com/watch?v=JFiMmaktnuM "Terraform Providers")
