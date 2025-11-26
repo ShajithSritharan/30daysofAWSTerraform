@@ -11,7 +11,7 @@ Welcome back to the 30-day Terraform journey. Today is all about providers—the
 - How to write a provider block with version constraints
 - Why pinning versions matters and how to do it safely
 
-![Terraform provider architecture](diagrams/00-terraform_provider.png)
+![Terraform provider architecture](./00-terraform_provider.png)
 
 ## Providers 101
 Terraform itself is just a binary; providers are the plugins that convert your configuration into API requests to provision resources (for example, AWS S3 or VPC). When you run `terraform init`, Terraform downloads the providers you declare so every subsequent command can translate your HCL into real API calls.
