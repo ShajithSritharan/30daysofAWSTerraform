@@ -1,6 +1,6 @@
 # #30daysofAWSTerraform
 
-## Day 03 - Build and Tag an S3 Bucket with Terraform
+# Day 03 - Build and Tag an S3 Bucket with Terraform
 Today we will provision an AWS S3 bucket with Terraform, add meaningful tags, and learn the workflow from init to destroy. This post reads like a mini how-to blog you can drop into GitHub.
 
 ### What you'll learn
