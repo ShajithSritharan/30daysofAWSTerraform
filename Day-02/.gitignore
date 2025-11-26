@@ -1,0 +1,7 @@
+.terraform/
+*.tfstate
+*.tfstate.backup
+crash.log
+# (optional) If you don't want to commit variable files:
+*.tfvars
+*.tfvars.json
