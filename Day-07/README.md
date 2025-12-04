@@ -160,3 +160,6 @@ Type constraints catch mismatches early if a `tfvars` file provides the wrong sh
 - Maps centralize flexible key-value inputs like tags while enforcing value types.
 - Tuples validate both order and element type for small, fixed sequences.
 - Objects bundle mixed attributes so modules receive one predictable config block.
+
+### Watch: AWS Terraform Type Constraints Explained (with realtime examples)
+Video: https://www.youtube.com/watch?v=gu2oCJ9DQiQ&t=14s
