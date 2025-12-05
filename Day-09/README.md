@@ -47,20 +47,27 @@ resource "aws_instance" "app_with_sg" {
 }
 
 resource "aws_s3_bucket" "compliance_bucket" {
-  bucket = var.bucket_names[1]
-  tags = merge(var.tags, { Name = "Compliance Bucket" })
+  bucket = var.bucket_names[0]
+
+  tags = merge(
+    var.tags,
+    {
+      Name       = "Compliance Validated Bucket"
+      Demo       = "postcondition"
+      Compliance = "SOC2"
+    }
+  )
+
+  # Lifecycle Rule: Validate bucket has required tags after creation
+  # This ensures compliance with organizational tagging policies
   lifecycle {
     precondition {
-      condition     = contains(var.allowed_region, data.aws_region.current.name)
-      error_message = "Must deploy only in allowed regions"
-    }
-    precondition {
       condition     = contains(var.allowed_environments, var.environment)
-      error_message = "Environment not approved for bucket creation"
+      error_message = "Environment '${var.environment}' is not approved for bucket creation. Allowed environments: ${join(", ", var.allowed_environments)}"
     }
     postcondition {
-      condition     = contains(keys(var.tags), "Compliance")
-      error_message = "Bucket needs a Compliance tag"
+      condition     = contains(keys(var.tags), "Environment")
+      error_message = "ERROR: Bucket must have an 'Environment' tag!"
     }
   }
 }

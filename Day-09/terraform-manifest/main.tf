@@ -172,7 +172,7 @@ resource "aws_instance" "app_with_sg" {
 
 
 # ==============================
-# Example 4: postcondition
+# Example 4: pecondition and postcondition
 # Use Case: Ensure S3 bucket has required tags after creation
 # ==============================
 
