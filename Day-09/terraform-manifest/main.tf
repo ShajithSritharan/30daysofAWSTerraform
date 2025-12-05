@@ -1,4 +1,3 @@
-/**
 
 # ==============================
 # Example 1: create_before_destroy
@@ -171,7 +170,7 @@ resource "aws_instance" "app_with_sg" {
   }
 }
 
-**/
+
 # ==============================
 # Example 4: postcondition
 # Use Case: Ensure S3 bucket has required tags after creation
