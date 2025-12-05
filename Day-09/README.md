@@ -10,9 +10,7 @@
 - Stop bad applies up front with `precondition` and confirm results with `postcondition`.
 - Read the AWS console output to see these rules in action.
 
-![Lifecycle](./lifecycle.drawio.png)
-
-### The Terraform script (short version)
+### The Terraform script 
 This is the heart of the demo in `terraform-manifest/main.tf`:
 ```hcl
 provider "aws" { region = var.region }
@@ -68,7 +66,8 @@ resource "aws_s3_bucket" "compliance_bucket" {
 }
 ```
 
-### What each rule does (plain English)
+### What each rule does
+![Lifecycle](./lifecycle.drawio.png)
 - `create_before_destroy`: Make the new resource first, then delete the old one. Good for zero downtime swaps. If set to `false`, expect a short outage during replace.
 - `prevent_destroy`: Blocks deletion so nobody removes the bucket by mistake. Terraform will stop the plan.
 - `ignore_changes`: Terraform ignores `desired_capacity` drift because AWS Auto Scaling manages it. Plans stay clean even when the console changes the number.
